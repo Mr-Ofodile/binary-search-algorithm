@@ -1,0 +1,104 @@
+<!doctype>
+<html>
+<head>
+    <title>Linear Search algorithm</title>
+</head>
+    <body>
+    
+    <script>
+        
+    function binary(arr, elem)//binary search confirmed
+    {
+        var start= 0;
+        var end = arr.length - 1;
+        var middle = Math.floor((start + end) / 2);
+        
+        while(arr[middle] !== elem  && start <= end)
+        {
+            if(elem < arr[middle])
+               {
+                 end = middle - 1;
+               }else
+                    {
+                        start = middle + 1;
+                    }
+            middle = Math.floor((start + end) / 2);
+        }
+            
+        
+        
+        if(arr[middle] === elem)
+            {
+                return middle;
+                
+            }
+            return -1;
+            
+               
+            
+        
+        
+                
+    }
+        
+        // Original Solution
+function binarySearch2(arr, elem) {
+    var start = 0;
+    var end = arr.length - 1;
+    var middle = Math.floor((start + end) / 2);
+    while(arr[middle] !== elem && start <= end) {
+        if(elem < arr[middle]){
+            end = middle - 1;
+        } else {
+            start = middle + 1;
+        }
+        middle = Math.floor((start + end) / 2);
+    }
+    if(arr[middle] === elem){
+        return middle;
+    }
+    return -1;
+}
+
+// Refactored Version
+function binarySearch3(arr, elem) {
+    var start = 0;
+    var end = arr.length - 1;
+    var middle = Math.floor((start + end) / 2);
+    while(arr[middle] !== elem && start <= end) {
+        if(elem < arr[middle]) end = middle - 1;
+        else start = middle + 1;
+        middle = Math.floor((start + end) / 2);
+    }
+    return arr[middle] === elem ? middle : -1;
+}
+
+binarySearch([2,5,6,9,13,15,28,30], 103)
+        
+//reactored  shorter version
+    //colt steel is a bastard
+        //so they said it took to long to execute they want the shorter version
+        
+        function binary_search4(arr, elem)
+        {//create the function and pass in neccessary parameter arguments
+            //then create pointers to move through the sorted sequence
+            var start = 0;//poinrs to the first element of the array
+            var end = arr.length - 1;//this points to the end of the sequence/sorted array
+            var middle = Math.floor(start + end)/2);//this is the middle ground/point in the sorted sequence or array
+            
+            //now we code the logic
+            //using a simple while loop
+            while(arr[middle] !== elem && start <= end)
+                                        {
+                                            if(elem < arr[middle]) end = middle - 1;
+                                            else start = middle + 1;
+                                            middle = Math.floor((Math.floor / 2));
+                                        }
+            return arr[middle] === elem ? middle : -1;
+            
+            
+        }
+
+    </script>
+    </body>
+</html>
